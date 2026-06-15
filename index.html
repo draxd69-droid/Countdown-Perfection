@@ -3,82 +3,72 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Countdown to 22 September 2026</title>
+    <title>Countdown - September 22, 2026</title>
 
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
         body {
+            margin: 0;
             font-family: Arial, sans-serif;
-            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
             color: white;
-            min-height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
+            height: 100vh;
             text-align: center;
         }
 
         .container {
-            padding: 30px;
+            padding: 20px;
         }
 
         h1 {
-            margin-bottom: 20px;
             font-size: 2.5rem;
+            margin-bottom: 10px;
         }
 
-        .target-date {
-            font-size: 1.2rem;
+        .date {
             margin-bottom: 40px;
-            opacity: 0.9;
+            opacity: 0.8;
         }
 
         .countdown {
             display: flex;
-            gap: 20px;
-            justify-content: center;
+            gap: 15px;
             flex-wrap: wrap;
+            justify-content: center;
         }
 
         .box {
-            background: rgba(255,255,255,0.15);
-            backdrop-filter: blur(5px);
-            border-radius: 15px;
+            background: rgba(255,255,255,0.1);
             padding: 20px;
-            min-width: 120px;
+            border-radius: 15px;
+            min-width: 100px;
         }
 
         .number {
-            font-size: 3rem;
+            font-size: 2.5rem;
             font-weight: bold;
         }
 
         .label {
-            margin-top: 10px;
-            font-size: 1rem;
+            margin-top: 5px;
+            font-size: 0.9rem;
             text-transform: uppercase;
-            letter-spacing: 1px;
         }
 
         .expired {
             font-size: 2rem;
-            font-weight: bold;
-            color: #ffd700;
+            color: #ffcc00;
         }
     </style>
 </head>
+
 <body>
 
 <div class="container">
     <h1>Countdown</h1>
-    <div class="target-date">
-        September 22, 2026 - 5:00 PM
-    </div>
+    <div class="date">Deadline: September 22, 2026 - 5:00 PM</div>
 
     <div id="countdown" class="countdown">
         <div class="box">
@@ -104,7 +94,7 @@
 </div>
 
 <script>
-    const targetDate = new Date("2026-09-14T17:00:00");
+    const targetDate = new Date(2026, 8, 22, 17, 0, 0); // September = 8
 
     function updateCountdown() {
         const now = new Date();
