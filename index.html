@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="it">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Countdown al 14 Settembre 2026</title>
+    <title>Countdown to 14 September 2026</title>
 
     <style>
         * {
@@ -77,28 +77,28 @@
 <div class="container">
     <h1>Countdown</h1>
     <div class="target-date">
-        14 Settembre 2026 - Ore 17:00
+        September 14, 2026 - 5:00 PM
     </div>
 
     <div id="countdown" class="countdown">
         <div class="box">
             <div id="days" class="number">0</div>
-            <div class="label">Giorni</div>
+            <div class="label">Days</div>
         </div>
 
         <div class="box">
             <div id="hours" class="number">0</div>
-            <div class="label">Ore</div>
+            <div class="label">Hours</div>
         </div>
 
         <div class="box">
             <div id="minutes" class="number">0</div>
-            <div class="label">Minuti</div>
+            <div class="label">Minutes</div>
         </div>
 
         <div class="box">
             <div id="seconds" class="number">0</div>
-            <div class="label">Secondi</div>
+            <div class="label">Seconds</div>
         </div>
     </div>
 </div>
@@ -112,7 +112,7 @@
 
         if (diff <= 0) {
             document.getElementById("countdown").innerHTML =
-                '<div class="expired">Tempo scaduto!</div>';
+                '<div class="expired">Time is up!</div>';
             return;
         }
 
