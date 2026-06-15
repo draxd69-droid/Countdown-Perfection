@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Countdown al 14 Settembre 2026</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            color: white;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .container {
+            padding: 30px;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+            font-size: 2.5rem;
+        }
+
+        .target-date {
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+            opacity: 0.9;
+        }
+
+        .countdown {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .box {
+            background: rgba(255,255,255,0.15);
+            backdrop-filter: blur(5px);
+            border-radius: 15px;
+            padding: 20px;
+            min-width: 120px;
+        }
+
+        .number {
+            font-size: 3rem;
+            font-weight: bold;
+        }
+
+        .label {
+            margin-top: 10px;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .expired {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #ffd700;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Countdown</h1>
+    <div class="target-date">
+        14 Settembre 2026 - Ore 17:00
+    </div>
+
+    <div id="countdown" class="countdown">
+        <div class="box">
+            <div id="days" class="number">0</div>
+            <div class="label">Giorni</div>
+        </div>
+
+        <div class="box">
+            <div id="hours" class="number">0</div>
+            <div class="label">Ore</div>
+        </div>
+
+        <div class="box">
+            <div id="minutes" class="number">0</div>
+            <div class="label">Minuti</div>
+        </div>
+
+        <div class="box">
+            <div id="seconds" class="number">0</div>
+            <div class="label">Secondi</div>
+        </div>
+    </div>
+</div>
+
+<script>
+    const targetDate = new Date("2026-09-14T17:00:00");
+
+    function updateCountdown() {
+        const now = new Date();
+        const diff = targetDate - now;
+
+        if (diff <= 0) {
+            document.getElementById("countdown").innerHTML =
+                '<div class="expired">Tempo scaduto!</div>';
+            return;
+        }
+
+        const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+        const minutes = Math.floor((diff / (1000 * 60)) % 60);
+        const seconds = Math.floor((diff / 1000) % 60);
+
+        document.getElementById("days").textContent = days;
+        document.getElementById("hours").textContent = hours.toString().padStart(2, "0");
+        document.getElementById("minutes").textContent = minutes.toString().padStart(2, "0");
+        document.getElementById("seconds").textContent = seconds.toString().padStart(2, "0");
+    }
+
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+</script>
+
+</body>
+</html>
